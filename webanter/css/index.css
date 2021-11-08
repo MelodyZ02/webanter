@@ -41,28 +41,49 @@ table {
 .center {
     margin-left: auto;
     margin-right: auto;
+    max-width: 350px;
 }
 
-.button {
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: table;
-    font-size: 16px;
-    transition-duration: 0.3s;
-    cursor: pointer;
-    width: 50%;
-    height: 50px;
-}
-
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 1px solid black;
+.btn-group button {
+    background-color: lightblue;
+    border: 1px solid lightblue;
+    color: black;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
   }
   
-  .button1:hover {
-    background-color: lightblue;
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: white;
     color: black;
   }
+
+  .selected-class {
+      cursor: pointer;
+
+  }
+
+  nav {
+      width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  header {
+    height: 10px;
+    padding: 10px 0;
+    text-align: left;
+}
