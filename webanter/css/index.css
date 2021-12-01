@@ -1,13 +1,63 @@
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
 body {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
 }
 
-.form {
-    background-color: white;
-    border: 1px solid black ;
-    text-align: center;
-    color: black;
+.gradient-border {
+    --border-width: 3px;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    font-family: Lato, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    background: #222;
+    border-radius: var(--border-width);
 }
+
+&::after {
+     position: absolute;
+     content: "";
+     top: calc(-1 * var(--border-width));
+     left: calc(-1 * var(--border-width));
+     z-index: -1;
+     width: calc(100% + var(--border-width) * 2);
+     height: calc(100% + var(--border-width) * 2);
+     background: linear-gradient(
+             60deg,
+             hsl(224, 85%, 66%),
+             hsl(269, 85%, 66%),
+             hsl(314, 85%, 66%),
+             hsl(359, 85%, 66%),
+             hsl(44, 85%, 66%),
+             hsl(89, 85%, 66%),
+             hsl(134, 85%, 66%),
+             hsl(179, 85%, 66%)
+     );
+     background-size: 300% 300%;
+     background-position: 0 50%;
+     border-radius: calc(2 * var(--border-width));
+     animation: moveGradient 4s alternate infinite;
+ }
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 
 footer{
     background: #00000080;
@@ -29,50 +79,8 @@ footer{
     margin-left: auto;
 }
 
-table {
-    background-color: white;
-    border: 1px solid black ;
-    text-align: center;
-    color: black;
-    width: auto;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 350px;
-    justify-content: center;
-}
-
-.btn-group button {
-    background-color: lightblue;
-    border: 1px solid lightblue;
-    color: black;
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
-  
-  /* Clear floats (clearfix hack) */
-  .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: white;
-    color: black;
-  }
-
   .selected-class {
       cursor: pointer;
-
   }
 
   nav {
@@ -130,135 +138,3 @@ table {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: white;}
-
-
-
-.container
-{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background-color: red;
-    background: linear-gradient(to bottom, rgb(6, 108, 224),  rgb(14, 48, 122));
-    width: 800px;
-    height: 400px;
-    margin: 10% auto;;
-    border-radius: 5px;
-}
-
-.content-holder
-{
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    margin-top: 15%;
-    padding: 50px;
-}
-
-.content-holder h2
-{
-    font-size: 34px;
-    margin: 20px auto;
-}
-
-.content-holder p
-{
-    margin: 30px auto;
-}
-
-.content-holder button
-{
-    border:none;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: white;
-    width: 150px;
-    margin: 20px auto;
-}
-
-
-.box-2{
-    background-color: white;
-
-    margin: 5px;
-}
-
-.login-form-container
-{
-    text-align: center;
-    margin-top: 10%;
-
-}
-
-.login-form-container h1
-{
-    color: black;
-    font-size: 24px;
-    padding: 20px;
-}
-
-.input-field
-{
-    box-sizing: border-box;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid rgb(168, 168, 168);
-    width: 250px;
-    outline: none;
-}
-
-.login-button{
-    box-sizing: border-box;
-    color: white;
-    font-size: 14px;
-    padding: 13px;
-    border-radius: 7px;
-    border: none;
-    width: 250px;
-    outline: none;
-    background-color: rgb(56, 102, 189);
-}
-
-
-
-.button-2
-{
-    display: none;
-}
-
-
-
-
-
-.signup-form-container
-{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-60%);
-    text-align: center;
-    display: none;
-}
-
-
-.signup-form-container h1
-{
-    color: black;
-    font-size: 24px;
-    padding: 20px;
-}
-
-.signup-button{
-    box-sizing: border-box;
-    color: white;
-    font-size: 14px;
-    padding: 13px;
-    border-radius: 7px;
-    border: none;
-    width: 250px;
-    outline: none;
-    background-color: rgb(56, 189, 149);  
-}
