@@ -23,8 +23,8 @@ include 'include/function/header.php';
     <div class="dropdown">
         <button class="dropbtn">Language</button>
         <div class="dropdown-content">
-            <a href="?lang=hu"><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></a>
-            <a href="?lang=en"><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></a>
+            <a href="?lang=hu"><span><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></span></a>
+            <a href="?lang=en"><span><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></span></a>
         </div>
     </div>
 </header>
