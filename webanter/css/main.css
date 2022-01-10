@@ -1,5 +1,4 @@
 .main {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -10,6 +9,8 @@
     width: auto;
     height: auto;
     color: white;
+    display: inline;
+    text-align: center;
 }
 
 .gradient-border {
@@ -48,13 +49,18 @@
 
 .wrapper{
     transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 a{
-    display: block;
-    width: 200px;
-    height: 40px;
-    line-height: 40px;
+    float: left;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: auto;
     font-size: 18px;
     font-family: sans-serif;
     text-decoration: none;
@@ -67,6 +73,10 @@ a{
 }
 
 a span{
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
     position: relative;
     z-index: 2;
 }
@@ -140,7 +150,7 @@ footer{
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
   }
   
   /* Dropdown Content (Hidden by Default) */

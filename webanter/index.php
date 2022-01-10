@@ -35,12 +35,9 @@ include 'include/function/header.php';
     <h2><?= $lang['head'] ?></h2><br>
     <h2><?= $lang['text1'] ?></h2><br>
 
-        <div class="wrapper">
-            <a href="pages/login.php"><span><?= $lang['login'] ?></span></a>
-        </div>
-
-        <div class="wrapper">
-            <a href="pages/register.php"><span><?= $lang['register'] ?></span></a>
+        <div class="wrapper" >
+            <a href="pages/login.php"><span style="col-lg-1"><?= $lang['login'] ?></span></a>
+            <a href="pages/register.php"><span style="col-lg-1"><?= $lang['register'] ?></span></a>
         </div>
 
 </div>
