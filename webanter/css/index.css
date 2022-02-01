@@ -1,0 +1,140 @@
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+}
+
+.gradient-border {
+    --border-width: 3px;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    font-family: Lato, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    background: #222;
+    border-radius: var(--border-width);
+}
+
+&::after {
+     position: absolute;
+     content: "";
+     top: calc(-1 * var(--border-width));
+     left: calc(-1 * var(--border-width));
+     z-index: -1;
+     width: calc(100% + var(--border-width) * 2);
+     height: calc(100% + var(--border-width) * 2);
+     background: linear-gradient(
+             60deg,
+             hsl(224, 85%, 66%),
+             hsl(269, 85%, 66%),
+             hsl(314, 85%, 66%),
+             hsl(359, 85%, 66%),
+             hsl(44, 85%, 66%),
+             hsl(89, 85%, 66%),
+             hsl(134, 85%, 66%),
+             hsl(179, 85%, 66%)
+     );
+     background-size: 300% 300%;
+     background-position: 0 50%;
+     border-radius: calc(2 * var(--border-width));
+     animation: moveGradient 4s alternate infinite;
+ }
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+footer{
+    background: #00000080;
+    bottom: 0px;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+
+#footer{
+    position: fixed;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+  .selected-class {
+      cursor: pointer;
+  }
+
+  nav {
+      width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  header {
+    height: 10px;
+    padding: 10px 0;
+    text-align: left;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: lightblue;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    max-width: 85px;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: white;}

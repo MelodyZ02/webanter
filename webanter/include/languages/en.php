@@ -7,6 +7,7 @@ $lang = array(
 	'register' => 'Register',
 	'login' => 'Login',
     'tos' => "By logging in you agree to the ridiculously long terms that you didn't bother to read",
+    'lang' => 'Language',
 )
 
 

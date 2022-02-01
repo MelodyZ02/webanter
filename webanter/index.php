@@ -32,16 +32,16 @@ include 'include/function/header.php';
 </nav>
 </header>
 -->
-<nav class="navbar">
+<nav class="navbar navbar-dark bg-dark">
     <div class="dropdown">
         <ul class="navbar-nav" >
-            <li class="nav-item" >
-                <div class="dropdown">
-                    <button class="dropbtn">Language</button>
-                    <div class="dropdown-content">
-                        <a href="?lang=hu"><span><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></span></a>
-                        <a href="?lang=en"><span><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></span></a>
-                    </div>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?= $lang['lang'] ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="?lang=hu"><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></a>
+                    <a class="dropdown-item" href="?lang=en"><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></a>
                 </div>
             </li>
         </ul>
