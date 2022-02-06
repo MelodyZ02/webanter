@@ -10,54 +10,35 @@ include 'include/function/header.php';
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/background.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 
 </head>
 <body onload="backgr()">
-<!--
-<header>
-<nav>
-<div class="navbar">
-<div class="dropdown">
-    <button class="dropbtn">Language</button>
-    <div class="dropdown-content">
-        <a href="?lang=hu"><span><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></span></a>
-        <a href="?lang=en"><span><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></span></a>
+
+<div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 20rem;">
+    <div class="card-header">
+        <h3 class="card-title"><?= $lang['head'] ?></h3>
+    </div>
+    <div class="card-body">
+        <?= $lang['text1'] ?>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="pages/login.php" class="btn btn-secondary active" role="button" aria-pressed="true"><?= $lang['login'] ?></a>
+        <a href="pages/register.php" class="btn btn-secondary active" role="button" aria-pressed="true"><?= $lang['register'] ?></a>
     </div>
 </div>
-</div>
-</nav>
-</header>
--->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="dropdown">
-        <ul class="navbar-nav" >
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?= $lang['lang'] ?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="?lang=hu"><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" alt="HU-flag" style="width: 65px; height: 40px;"></img></a>
-                    <a class="dropdown-item" href="?lang=en"><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" alt="US-flag" style="width: 65px; height: 40px;"></img></a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="gradient-border" id="box">
-    <h2><?= $lang['head'] ?></h2><br>
-    <h2><?= $lang['text1'] ?></h2><br>
-        <a href="pages/login.php"><span><?= $lang['login'] ?></span></a>
-        <a href="pages/register.php"><span><?= $lang['register'] ?></span></a>
-</div>
 
 
-<footer class="container-fluid text-white" id="footer">
-    © 2021 MelodyZ
-</footer>
+<?php
+
+include 'include/function/footer.php';
+
+?>
+
 </body>
 </html>

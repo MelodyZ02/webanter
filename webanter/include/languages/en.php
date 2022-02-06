@@ -3,12 +3,11 @@
 $lang = array(
 
 	'head' => 'Welcome to webanter!',
-	'text1' => 'Webanter is a chatting website.',
+	'text1' => "Log in to continue or create a new account.",
 	'register' => 'Register',
 	'login' => 'Login',
-    'tos' => "By logging in you agree to the ridiculously long terms that you didn't bother to read",
-    'lang' => 'Language',
+    'tos' => "By registering you agree to the ridiculously long terms of service that you didn't bother to read",
+    'btn' => "Language",
 )
-
 
 ?>
