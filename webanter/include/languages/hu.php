@@ -8,6 +8,10 @@ $lang = array(
 	'login' => 'Bejelentkezés',
     'tos' => "By registering you agree to the ridiculously long terms of service that you didn't bother to read",
     'btn' => "Nyelv",
+    'loginSign' => "Bejelentkezés",
+    'email' => "Email cím",
+    'password' => "Jelszó",
+    'forgot' => "Elfelejtett jelszó"
 )
 
 

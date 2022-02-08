@@ -1,89 +1,59 @@
+<?php
+
+include $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php';
+
+?>
 <html>
-    <head>
-        <title>webanter</title>
+<head>
+    <title>webanter</title>
 
-        <link href="../css/index.css" rel="stylesheet">
-        <script type="text/javascript">
-            function backgr(){
-                var backimg = ["backgrounds/001.jpg",
-                    "backgrounds/002.jpg",
-                    "backgrounds/003.jpg",
-                    "backgrounds/004.jpg",
-                    "backgrounds/005.jpg",
-                    "backgrounds/006.jpg",
-                    "backgrounds/007.jpg",
-                    "backgrounds/008.jpg",
-                    "backgrounds/009.jpg",
-                    "backgrounds/010.jpg",
-                    "backgrounds/011.jpg",
-                    "backgrounds/012.jpg",
-                    "backgrounds/013.jpg",
-                    "backgrounds/014.jpg",
-                    "backgrounds/015.jpg",];
-                var randimg =Math.floor(Math.random()*15);
-                document.body.background = backimg[randimg];
-            }
-        </script>
-    </head>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script src="../js/background.js" type="text/javascript"></script>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
+</head>
     <body onload="backgr()">
-        <header>
-            <div class="dropdown">
-                <button class="dropbtn">Language</button>
-                <div class="dropdown-content">
-                  <a href="?lang=hu"><img src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif" style="width: 65px; height: 40px;"></img></a>
-                  <a href="?lang=en"><img src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif" style="width: 65px; height: 40px;"></img></a>
-                </div>
-              </div>
-        </header>
 
-        <div class="container">
-            <!--Data or Content-->
-            <div class="box-1">
-                <div class="content-holder">
-                    <h2>Hello!</h2>
-                    <p>By logging in you agree to the ridiculously long terms that you didn't bother to read</p>
-                    <button class="button-1" onclick="signup()">Sign up</button>
-                    <button class="button-2" onclick="login()">Login</button>
-                </div>
-            </div>
-    
-            
-            <!--Forms-->
-            <div class="box-2">
-                <div class="login-form-container">
-                    <h1>Login Form</h1>
-                    <input type="text" placeholder="Username" class="input-field">
-                    <br><br>
-                    <input type="password" placeholder="Password" class="input-field">
-                    <br><br>
-                    <button class="login-button" type="button">Login</button>
-                </div>
-    
-    
-    <!--Create Container for Signup form-->
-            <div class="signup-form-container">
-                <h1>Sign Up Form</h1>
-                <input type="text" placeholder="Username" class="input-field">
-                <br><br>
-                <input type="email" placeholder="Email" class="input-field">
-                <br><br>
-                <input type="password" placeholder="Password" class="input-field">
-                <br><br>
-                <button class="signup-button" type="button">Sign Up</button>
-            </div>
-    
-    
-    
-            </div>
-    
-    
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <?= $lang['btn'] ?>
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item bg-dark text-light" href="?lang=hu">Magyar</a>
+                        <a class="dropdown-item bg-dark text-light" href="?lang=en">English</a>
+                    </div>
+        </div>
+    </nav>
 
-        <footer class="container-fluid text-white" id="footer">
+    <div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 20rem;">
+    <form class="form-signin">
+         <!-- logóó <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h1 class="h3 mb-3 font-weight-normal"><?= $lang['loginSign'] ?></h1>
+        <label for="inputEmail" class="sr-only"><?= $lang['email'] ?></label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="<?= $lang['email'] ?>" required="" autofocus="">
+        <label for="inputPassword" class="sr-only"><?= $lang['password'] ?></label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="<?= $lang['password'] ?>" required="">
+        <div class="checkbox mb-3">
+            <label>
+                <a href="forgotpassword.php" aria-pressed="true"><?= $lang['forgot'] ?></a>
+            </label>
+        </div>
+        <button class="btn btn-lg btn-dark btn-block" type="submit"><?= $lang['login'] ?></button>
+    </form>
+    </div>
 
-            <div>
-                © 2021 MelodyZ
-            </div>
-        </footer>
+    <footer class="container-fluid text-secondary" id="footer">
+        © 2022 Copyright: MelodyZ
+    </footer>
+
     </body>
 </html>

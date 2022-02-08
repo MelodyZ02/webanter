@@ -1,6 +1,6 @@
 <?php
 
-	$json_languages = file_get_contents('include/db/languages.json');
+	$json_languages = file_get_contents( $_SERVER['DOCUMENT_ROOT'] . '/include/db/languages.json');
 	$json_languages = json_decode($json_languages, true);
 	
 	if(isset($_GET['lang']))
@@ -22,6 +22,6 @@
 	$_SESSION['lang'] = $language_code;
 	setcookie('lang', $language_code, time() + (3600* 24 * 30));
 	
-	include 'include/languages/'.$language_code.'.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/include/languages/'.$language_code.'.php';
 
 ?>

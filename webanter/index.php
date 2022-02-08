@@ -1,6 +1,7 @@
 <?php
-
-include 'include/function/header.php';
+define('path', $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php');
+include path;
+//include 'include/function/header.php';
 
 ?>
 <html>
@@ -20,6 +21,20 @@ include 'include/function/header.php';
 </head>
 <body onload="backgr()">
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <?= $lang['btn'] ?>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item bg-dark text-light" href="?lang=hu">Magyar</a>
+                    <a class="dropdown-item bg-dark text-light" href="?lang=en">English</a>
+                </div>
+    </div>
+</nav>
+
 <div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 20rem;">
     <div class="card-header">
         <h3 class="card-title"><?= $lang['head'] ?></h3>
@@ -33,12 +48,9 @@ include 'include/function/header.php';
     </div>
 </div>
 
-
-<?php
-
-include 'include/function/footer.php';
-
-?>
+<footer class="container-fluid text-secondary" id="footer">
+    © 2022 Copyright: MelodyZ
+</footer>
 
 </body>
 </html>
