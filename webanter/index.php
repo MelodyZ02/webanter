@@ -1,5 +1,5 @@
 <?php
-define('path', $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php');
+define('path', $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/header.php');
 include path;
 //include 'include/function/header.php';
 

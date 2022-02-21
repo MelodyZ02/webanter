@@ -1,5 +1,5 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/include/function/language.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/language.php';
 
 ?>
