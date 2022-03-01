@@ -1,5 +1,5 @@
 <?php
-define('path', $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/header.php');
+define('path', $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php');
 include path;
 //include 'include/function/header.php';
 
@@ -24,7 +24,7 @@ include path;
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                     <?= $lang['btn'] ?>
                 </a>
@@ -32,6 +32,17 @@ include path;
                     <a class="dropdown-item bg-dark text-light" href="?lang=hu">Magyar</a>
                     <a class="dropdown-item bg-dark text-light" href="?lang=en">English</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php"><?= $lang['nav1'] ?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pages/login.php"><?= $lang['nav2'] ?></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pages/register.php"><?= $lang['nav3'] ?></a>
+            </li>
+        </ul>
     </div>
 </nav>
 
@@ -42,10 +53,14 @@ include path;
     <div class="card-body">
         <?= $lang['text1'] ?>
     </div>
+
+
+
     <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="pages/login.php" class="btn btn-secondary active" role="button" aria-pressed="true"><?= $lang['login'] ?></a>
-        <a href="pages/register.php" class="btn btn-secondary active" role="button" aria-pressed="true"><?= $lang['register'] ?></a>
+        <a href="pages/login.php" class="btn btn-lg btn-dark " style=" margin: 1px;"><?= $lang['login'] ?></a>
+        <a href="pages/register.php" class="btn btn-lg btn-dark " style=" margin: 1px;"><?= $lang['register'] ?></a>
     </div>
+
 </div>
 
 <footer class="container-fluid text-secondary" id="footer">

@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php';
 
 ?>
 <html>
@@ -31,6 +31,17 @@ include $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/header.php';
                         <a class="dropdown-item bg-dark text-light" href="?lang=hu">Magyar</a>
                         <a class="dropdown-item bg-dark text-light" href="?lang=en">English</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.php"><?= $lang['nav1'] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"><?= $lang['nav2'] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.php"><?= $lang['nav3'] ?></a>
+                </li>
+            </ul>
         </div>
     </nav>
 

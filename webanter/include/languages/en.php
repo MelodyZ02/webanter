@@ -11,7 +11,12 @@ $lang = array(
     'loginSign' => "Please log in",
     'email' => "Email address",
     'password' => "Password",
-    'forgot' => "Forgot password"
+    'forgot' => "Forgot password",
+    'resetpass' => "Request password reset",
+    'back2login' => "Back to Sign in",
+    'nav1' => "Home",
+    'nav2' => "Login",
+    'nav3' => "Register",
 )
 
 ?>

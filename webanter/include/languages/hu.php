@@ -11,8 +11,12 @@ $lang = array(
     'loginSign' => "Bejelentkezés",
     'email' => "Email cím",
     'password' => "Jelszó",
-    'forgot' => "Elfelejtett jelszó"
+    'forgot' => "Elfelejtett jelszó",
+    'resetpass' => "Jelszó visszaállítása",
+    'back2login' => "Vissza a Bejeltkezéshez",
+    'nav1' => "Főoldal",
+    'nav2' => "Bejelentkezés",
+    'nav3' => "Regisztrálás",
 )
-
 
 ?>
