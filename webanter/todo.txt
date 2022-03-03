@@ -1,8 +1,0 @@
-navbar:
--home(index)
--login
--register
--lang(jobboldalt)
-
-forgotpassword:
--auto email
