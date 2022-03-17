@@ -17,12 +17,16 @@ $lang = array(
     'nav1' => "Home",
     'nav2' => "Login",
     'nav3' => "Register",
+    'nav4' => "Friends",
+    'nav5' => "Profile",
     'Createacc' => "Create an account",
     'form1' => "Your Name",
     'form2' => "Your Email",
     'form3' => "Password",
     'form4' => "Repeat Password",
     'already' => "Already have an account?",
+    'fhead' => "Friend list",
+    'name' => "Name",
 )
 
 ?>

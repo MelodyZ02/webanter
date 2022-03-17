@@ -1,4 +1,5 @@
 <?php
+session_start();
 define("CONFIG_DBSERVER", "localhost");
 define("CONFIG_DBUSER", "webanter_user");
 define("CONFIG_DBPASS", "RRp2I)9h0LA9QBsZ");

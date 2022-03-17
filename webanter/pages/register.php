@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/webanter/include/function/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php';
 require_once '../config.php';
 
 ?>
@@ -28,7 +28,7 @@ require_once '../config.php';
             if(isset($_GET['lang'])):
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/webanter/index.php?lang=<?=$_GET['lang']?>"><?= $lang['nav1'] ?></a>
+                    <a class="nav-link" href="/index.php?lang=<?=$_GET['lang']?>"><?= $lang['nav1'] ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php?lang=<?=$_GET['lang']?>"><?= $lang['nav2'] ?></a>
@@ -38,7 +38,7 @@ require_once '../config.php';
                 </li>
             <?php else:?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/webanter/index.php"><?= $lang['nav1'] ?></a>
+                    <a class="nav-link" href="/index.php"><?= $lang['nav1'] ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php"><?= $lang['nav2'] ?></a>
@@ -109,7 +109,7 @@ require_once '../config.php';
                                     <input name="submit" class="btn btn-lg btn-dark btn-block" type="submit" value="<?= $lang['register'] ?>">
                                 </div>
 
-                                <p class="text-center text-muted mt-5 mb-0"><?= $lang['already'] ?> <a href="#!" class="fw-bold text-body"><u><?= $lang['login'] ?></u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0"><?= $lang['already'] ?> <a href="login.php" class="fw-bold text-body"><u><?= $lang['login'] ?></u></a></p>
 
                             </form>
 

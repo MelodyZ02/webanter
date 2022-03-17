@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 require_once '../config.php';
 
 if(ISSET($_POST['submit'])){
@@ -8,14 +6,16 @@ if(ISSET($_POST['submit'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM userinfo WHERE email=? AND password=? ";
-        $query = $db->prepare($sql);
-        $query->execute(array($email,$password));
-        $row = $query->rowCount();
-        $fetch = $query->fetch();
-        echo $email;
-        if($row > 0) {
-            $_SESSION['user'] = $fetch['mem_id'];
+        $sql = "SELECT * FROM userinfo WHERE email=:email AND password=:pw ";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':pw', $password);
+        $stmt->execute();
+        $fetch = $stmt->fetch();
+
+        if(count($fetch) > 0) {
+            $_SESSION['user'] = $fetch['userID'];
+
             header("location: main.php");
         } else{
             echo "hiba";

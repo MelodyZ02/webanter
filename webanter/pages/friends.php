@@ -1,11 +1,12 @@
 <?php
+
 define('path', $_SERVER['DOCUMENT_ROOT'] . '/include/function/header.php');
 include path;
 
 // '/webanter/include/function/header.php' --otthon;
 // '/include/function/header.php' --suli;
 
-require_once 'config.php';
+require_once '../config.php';
 
 $db = null;
 
@@ -18,13 +19,24 @@ catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
 
+$sql = "SELECT * FROM userinfo WHERE userId=:user  ";
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':user', $_SESSION['user']);
+$stmt->execute();
+$fetch = $stmt->fetch();
+
+$stmt = $db->prepare("SELECT * FROM friend WHERE UserID = :uid");
+$stmt->bindValue(":uid", $_SESSION['user']);
+$stmt->execute();
+$a = $stmt->fetchAll();
+
 ?>
 <html>
 <head>
     <title>webanter</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <script src="js/background.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="../js/background.js" type="text/javascript"></script>
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -41,27 +53,24 @@ catch (PDOException $e) {
         <ul class="navbar-nav mr-auto">
             <?php
             if(isset($_GET['lang'])):
-            ?>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?lang=<?=$_GET['lang']?>"><?= $lang['nav1'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/login.php?lang=<?=$_GET['lang']?>"><?= $lang['nav2'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/register.php?lang=<?=$_GET['lang']?>"><?= $lang['nav3'] ?></a>
-            </li>
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="main.php?lang=<?=$_GET['lang']?>"><?= $lang['nav1'] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="friends.php?lang=<?=$_GET['lang']?>"><?= $lang['nav4'] ?></a>
+                </li>
             <?php else:?>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php"><?= $lang['nav1'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/login.php"><?= $lang['nav2'] ?></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/register.php"><?= $lang['nav3'] ?></a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="main.php"><?= $lang['nav1'] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="friends.php"><?= $lang['nav4'] ?></a>
+                </li>
             <?php endif;?>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.php"><b><?= $fetch['name'] ?></b></a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown navbar-right">
@@ -77,19 +86,32 @@ catch (PDOException $e) {
     </div>
 </nav>
 
-<div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 20rem;">
+<div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 50rem;">
     <div class="card-header">
-        <h3 class="card-title"><?= $lang['head'] ?></h3>
+        <h3 class="card-title"><?= $lang['fhead'] ?></h3>
     </div>
     <div class="card-body">
-        <?= $lang['text1'] ?>
-    </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"><?= $lang['name'] ?></th>
+                <th scope="col">-</th>
 
-
-
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="pages/login.php" class="btn btn-lg btn-dark " style=" margin: 1px;"><?= $lang['login'] ?></a>
-        <a href="pages/register.php" class="btn btn-lg btn-dark " style=" margin: 1px;"><?= $lang['register'] ?></a>
+            </tr>
+            </thead>
+            <tbody>
+        <?php if(isset($_SESSION['user'])):
+            foreach ($a as $friend): ?>
+                <tr>
+                    <th scope="row"><?= $friend['FID']?></th>
+                    <td><?= $friend['name']?></td>
+                    <td></td>
+                </tr>
+        <?php endforeach;?>
+        <?php endif?>
+            </tbody>
+        </table>
     </div>
 
 </div>

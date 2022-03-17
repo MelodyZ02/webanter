@@ -17,12 +17,16 @@ $lang = array(
     'nav1' => "Főoldal",
     'nav2' => "Bejelentkezés",
     'nav3' => "Regisztrálás",
+    'nav4' => "Barátok",
+    'nav5' => "Profil",
     'Createacc' => "Fiók létrehozása",
     'form1' => "Neve",
     'form2' => "Email címe",
     'form3' => "Jelszó",
     'form4' => "Jelszó újra",
     'already' => "Már van fiókja?",
+    'fhead' => "Barátlista",
+    'name' => "Név",
 )
 
 ?>

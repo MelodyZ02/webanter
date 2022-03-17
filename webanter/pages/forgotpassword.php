@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . ' /webanter/include/function/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . ' /include/function/header.php';
 
 ?>
 <html>
