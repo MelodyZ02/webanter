@@ -71,7 +71,7 @@ require_once '../config.php';
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5"><?= $lang['Createacc'] ?></h2>
 
-                            <form role="form" method="post" action="registerconfig.php">
+                            <form role="form" method="post" action="../configs/registerconfig.php">
 
                                 <div class="form-outline mb-4">
                                     <input name="realname" type="text" id="name" class="form-control form-control-lg" placeholder="<?= $lang['form1'] ?>" />

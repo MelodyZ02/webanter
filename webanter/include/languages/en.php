@@ -3,6 +3,7 @@
 $lang = array(
 
 	'head' => 'Welcome to webanter!',
+	'head2' => 'Welcome ',
 	'text1' => "Log in to continue or create a new account.",
 	'register' => 'Register',
 	'login' => 'Login',
@@ -27,6 +28,14 @@ $lang = array(
     'already' => "Already have an account?",
     'fhead' => "Friend list",
     'name' => "Name",
+    'profileGender' => "Gender",
+    'profileImage' => "Profile Image",
+    'profileEdit' => "Edit",
+    'male' => "Male",
+    'female' => "Female",
+    'savebtn' => "Save",
+    'addFriend' => "Add friend",
+    'removeFriend' => "Remove",
 )
 
 ?>

@@ -25,7 +25,7 @@ $stmt->bindValue(':user', $_SESSION['user']);
 $stmt->execute();
 $fetch = $stmt->fetch();
 
-$stmt = $db->prepare("SELECT * FROM friend WHERE UserID = :uid");
+$stmt = $db->prepare("SELECT * FROM userinfo INNER JOIN friend ON userinfo.userID = friend.FID WHERE friend.UserID = :uid;");
 $stmt->bindValue(":uid", $_SESSION['user']);
 $stmt->execute();
 $a = $stmt->fetchAll();
@@ -96,7 +96,7 @@ $a = $stmt->fetchAll();
             <tr>
                 <th scope="col">#</th>
                 <th scope="col"><?= $lang['name'] ?></th>
-                <th scope="col">-</th>
+                <th scope="col"></th>
 
             </tr>
             </thead>
@@ -105,13 +105,21 @@ $a = $stmt->fetchAll();
             foreach ($a as $friend): ?>
                 <tr>
                     <th scope="row"><?= $friend['FID']?></th>
-                    <td><?= $friend['name']?></td>
-                    <td></td>
+                    <td><img src="<?= $friend['profileIMG'] ?>" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
+                    <?= $friend['name']?></td>
+                    <td style="text-align: right">
+                        <form method="post" action="../configs/deletefriend.php">
+                            <input name="FID" type="hidden" value="<?=$friend['FID']?>">
+                            <input name="userID" type="hidden" value="<?=$_SESSION['user']?>">
+                            <input type="submit" class="btn btn-danger" value="<?= $lang['removeFriend'] ?>">
+                        </form>
+                    </td>
                 </tr>
         <?php endforeach;?>
         <?php endif?>
             </tbody>
         </table>
+        <button class="btn mb-3 mr-3 btn-success"><span><?= $lang['addFriend'] ?></span></button>
     </div>
 
 </div>

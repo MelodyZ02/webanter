@@ -31,7 +31,7 @@ $fetch = $stmt->fetch();
 <head>
     <title>webanter</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
     <script src="../js/background.js" type="text/javascript"></script>
 
     <!-- Bootstrap 4 -->
@@ -83,13 +83,58 @@ $fetch = $stmt->fetch();
 </nav>
 
 <div class="card text-center border-dark mb-3 mx-auto bg-light rounded-top" style="width: 50rem;">
-    <div class="card-header">
-        <h3 class="card-title"><?= $lang['head2'] ?><?= $fetch['name'] ?></h3>
-    </div>
-    <div class="card-body">
 
-    </div>
+    <div class="container bootstrap snippets bootdey">
+        <div class="row">
+            <div class="profile-info ">
+                <div class="panel">
+                    <div class="bio-graph-heading">
+                        <div class="user-heading round">
+                            <img src="<?= $fetch['profileIMG'] ?>" alt="" style="height: 15rem;">
+                            <h1><?= $fetch['name'] ?></h1>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="panel-body bio-graph-info">
+                        <form role="form" method="post" action="../configs/profileconfig.php">
+                        <br>
+                        <div class="row">
+                            <div class="bio-row">
+                                <span style="font-weight: bold"><?= $lang['name'] ?></span>
+                                <div class="mb-3" style="max-width: 20rem; padding-left: 3rem;">
+                                    <input name="realname" type="text" id="name" class="form-control form-control-md" value="<?= $fetch['name'] ?>" style="text-align: center"/>
+                                </div>
+                            </div>
+                            <div class="bio-row">
+                                <span style="font-weight: bold; max-width: 20rem;"><?= $lang['profileImage'] ?></span>
+                                <div class="mb-3" style="max-width: 20rem; padding-left: 3rem;">
+                                    <input name="profileIMG" type="text" id="profileIMG" class="form-control form-control-md" value="<?= $fetch['profileIMG'] ?>" style="text-align: center"/>
+                                </div>
+                            </div>
+                            <div class="bio-row">
+                                <span style="font-weight: bold"><?= $lang['profileGender'] ?></span>
+                                <div class="mb-3" style="max-width: 20rem; padding-left: 3rem;">
+                                    <input name="gender" type="text" id="gender" class="form-control form-control-md" value="<?= $fetch['gender'] ?>" style="text-align: center"/>
+                                </div>
+                            </div>
+                            <div class="bio-row">
+                                <span style="font-weight: bold">Email</span>
+                                <div class="mb-3" style="max-width: 20rem; padding-left: 3rem; text-align: center">
+                                    <input name="email" type="text" id="email" class="form-control form-control-md" value="<?= $fetch['email'] ?>" style="text-align: center"/>
+                                </div>
+                            </div>
 
+                            <div class="d-flex justify-content-center bio-row-btn">
+                                <input name="submit" class="bn632-hover bn22" type="submit" value="<?= $lang['savebtn'] ?>">
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer class="container-fluid text-secondary" id="footer">

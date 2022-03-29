@@ -3,6 +3,7 @@
 $lang = array(
 
 	'head' => 'Üdvüzlünk a webanteren!',
+	'head2' => 'Üdvüzlünk ',
 	'text1' => 'A folytatáshoz jelentkezz be, vagy hozz létre egy új fiókot.',
 	'register' => 'Regisztráció',
 	'login' => 'Bejelentkezés',
@@ -27,6 +28,14 @@ $lang = array(
     'already' => "Már van fiókja?",
     'fhead' => "Barátlista",
     'name' => "Név",
+    'profileGender' => "Nem",
+    'profileImage' => "Profilkép",
+    'profileEdit' => "Szerkesztés",
+    'male' => "Férfi",
+    'female' => "Nő",
+    'savebtn' => "Mentés",
+    'addFriend' => "Barát hozzáadása",
+    'removeFriend' => "Eltávolítás",
 )
 
 ?>
