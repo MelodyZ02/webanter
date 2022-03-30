@@ -71,12 +71,12 @@ body {
 body {
     color: #797979;
     font-family: 'Open Sans', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
     font-size: 13px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bio-graph-heading {
@@ -102,7 +102,7 @@ body {
 }
 
 .bio-row {
-    width: 45%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -275,7 +275,6 @@ ul.summary-list > li:last-child  {
 }
 
 .activity-desk .panel {
-
     display: inline-block;
 }
 

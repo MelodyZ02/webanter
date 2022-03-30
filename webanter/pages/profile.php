@@ -86,11 +86,11 @@ $fetch = $stmt->fetch();
 
     <div class="container bootstrap snippets bootdey">
         <div class="row">
-            <div class="profile-info ">
+            <div class="profile-info">
                 <div class="panel">
                     <div class="bio-graph-heading">
                         <div class="user-heading round">
-                            <img src="<?= $fetch['profileIMG'] ?>" alt="" style="height: 15rem;">
+                            <img src="<?= $fetch['profileIMG'] ?>" alt="" style="height: 15rem; width: 15rem;">
                             <h1><?= $fetch['name'] ?></h1>
                             <p></p>
                         </div>
@@ -119,7 +119,6 @@ $fetch = $stmt->fetch();
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

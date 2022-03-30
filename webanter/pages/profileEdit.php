@@ -90,7 +90,7 @@ $fetch = $stmt->fetch();
                 <div class="panel">
                     <div class="bio-graph-heading">
                         <div class="user-heading round">
-                            <img src="<?= $fetch['profileIMG'] ?>" alt="" style="height: 15rem;">
+                            <img src="<?= $fetch['profileIMG'] ?>" alt="" style="height: 15rem; width: 15rem;">
                             <h1><?= $fetch['name'] ?></h1>
                             <p></p>
                         </div>

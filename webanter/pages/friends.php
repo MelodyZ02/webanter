@@ -30,6 +30,24 @@ $stmt->bindValue(":uid", $_SESSION['user']);
 $stmt->execute();
 $a = $stmt->fetchAll();
 
+$data = null;
+$tobb = False;
+if (isset($_POST['submit'])) {
+    if (is_numeric($_POST['profileSearch'])) {
+        $stmt = $db->prepare("SELECT * FROM userinfo WHERE userID=:id");
+        $stmt->bindValue(':id', $_POST['profileSearch']);
+        $stmt->execute();
+        $data = $stmt->fetch();
+
+    } else {
+        $stmt = $db->prepare("SELECT * FROM userinfo WHERE NAME LIKE :search");
+        $stmt->bindValue(':search', '%' . $_POST['profileSearch'] . '%');
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        $tobb = True;
+    }
+}
+
 ?>
 <html>
 <head>
@@ -119,7 +137,59 @@ $a = $stmt->fetchAll();
         <?php endif?>
             </tbody>
         </table>
-        <button class="btn mb-3 mr-3 btn-success"><span><?= $lang['addFriend'] ?></span></button>
+        <hr>
+        <h3><?= $lang['addFriend'] ?></h3>
+        <form action="friends.php" method="post">
+            <input type="text" name="profileSearch" placeholder="Ide írd a nevét vagy az ID-jét">
+            <input type="submit" name="submit" value="Keresés" class="btn mb-3 mr-3 btn-success">
+        </form>
+        <hr>
+        <?php if(isset($data)):?>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"><?= $lang['name'] ?></th>
+                <th scope="col"></th>
+
+            </tr>
+            </thead>
+            <tbody>
+        <?php if($tobb):?>
+        <?php foreach($data as $adat):?>
+        <tr>
+            <th scope="row"><?= $adat['userID']?></th>
+            <td><img src="<?= $adat['profileIMG'] ?>" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
+                <?= $adat['name']?></td>
+            <td style="text-align: right">
+                <form method="post" action="../configs/addfriend.php">
+                    <input name="FID" type="hidden" value="<?=$adat['userID']?>">
+                    <input name="userID" type="hidden" value="<?=$_SESSION['user']?>">
+                    <input type="submit" name="submit" class="btn mb-3 mr-3 btn-success" value="<?= $lang['addFriend'] ?>">
+                </form>
+            </td>
+        </tr>
+            <?php endforeach;?>
+            <?php else:?>
+            <tr>
+                <th scope="row"><?= $data['userID']?></th>
+                <td><img src="<?= $data['profileIMG'] ?>" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
+                    <?= $data['name']?></td>
+                <td style="text-align: right">
+                    <form method="post" action="../configs/addfriend.php">
+                        <input name="FID" type="hidden" value="<?=$data['userID']?>">
+                        <input name="userID" type="hidden" value="<?=$_SESSION['user']?>">
+                        <input type="submit" name="submit" class="btn mb-3 mr-3 btn-success" value="<?= $lang['addFriend'] ?>">
+                    </form>
+                </td>
+            </tr>
+            <?php endif;?>
+            </tbody>
+        </table>
+            <?php else:?>
+        <h1>Először keress!</h1>
+        <?php endif;?>
+
     </div>
 
 </div>

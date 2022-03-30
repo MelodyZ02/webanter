@@ -12,14 +12,12 @@ catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
 
-$stmt = $db->prepare("INSERT INTO `friend` WHERE `friend`.`FID` = :fid AND `friend`.`UserID`=:uid");
-$stmt->bindValue(':uid', $_SESSION['user']);
-$stmt->bindValue(':fid', $_POST['FID']);
-$stmt->execute();
+if(isset($_POST['submit'])){
+    $stmt = $db->prepare("INSERT INTO friend (FID, UserID) VALUES (:fid, :uid)");
+    $stmt->bindValue(':fid', $_POST['FID']);
+    $stmt->bindValue(':uid', $_POST['userID']);
+    $stmt->execute();
 
-header('Location:../pages/main.php');
+    header('Location: ../pages/main.php');
+}
 ?>
-<form>
-    <input type="text" name="search" placeholder="írd be a barátod ID-ját, vagy a nevét">
-    <input type="submit" value="Keresés">
-</form>
