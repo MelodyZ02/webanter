@@ -1,0 +1,40 @@
+<?php
+
+$lang = array(
+
+	'head' => 'Welcome to webanter!',
+	'head2' => 'Welcome ',
+	'text1' => "Log in to continue or create a new account.",
+	'register' => 'Register',
+	'login' => 'Login',
+    'tos' => "By registering you agree to the ridiculously long terms of service that you didn't bother to read",
+    'btn' => "Language",
+    'loginSign' => "Please log in",
+    'email' => "Email address",
+    'password' => "Password",
+    'wrongpass' => "Wrong password or email address",
+    'nav1' => "Home",
+    'nav2' => "Login",
+    'nav3' => "Register",
+    'nav4' => "Friends",
+    'nav5' => "Profile",
+    'Createacc' => "Create an account",
+    'form1' => "Your Name",
+    'form2' => "Your Email",
+    'form3' => "Password",
+    'form4' => "Repeat Password",
+    'already' => "Already have an account?",
+    'fhead' => "Friend list",
+    'name' => "Name",
+    'profileGender' => "Gender",
+    'profileImage' => "Profile Image",
+    'profileEdit' => "Edit",
+    'male' => "Male",
+    'female' => "Female",
+    'savebtn' => "Save",
+    'addFriend' => "Add friend",
+    'removeFriend' => "Remove",
+    'logout' => "Logout",
+)
+
+?>
