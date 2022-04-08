@@ -35,6 +35,7 @@ $lang = array(
     'addFriend' => "Add friend",
     'removeFriend' => "Remove",
     'logout' => "Logout",
+    'chat' => "Chat",
 )
 
 ?>

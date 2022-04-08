@@ -35,6 +35,7 @@ $lang = array(
     'addFriend' => "Barát hozzáadása",
     'removeFriend' => "Eltávolítás",
     'logout' => "Kijelentkezés",
+    'chat' => "Beszélgetés",
 )
 
 ?>

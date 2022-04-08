@@ -125,6 +125,7 @@ if (isset($_POST['submit'])) {
                 <th scope="col">#</th>
                 <th scope="col"><?= $lang['name'] ?></th>
                 <th scope="col"></th>
+                <th scope="col"></th>
 
             </tr>
             </thead>
@@ -133,9 +134,15 @@ if (isset($_POST['submit'])) {
             foreach ($a as $friend): ?>
                 <tr>
                     <th scope="row"><?= $friend['FID']?></th>
-                    <td><img src="<?= $friend['profileIMG'] ?>" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
-                    <?= $friend['name']?></td>
-                    <td style="text-align: right">
+                    <td><img src="<?= $friend['profileIMG'] ?>" alt="" style="height: 50px; width: 50px; border-radius: 50%;"> <?= $friend['name']?></td>
+                    <td style="text-align: right; padding-left: 0; max-width: available;">
+                        <form method="post" action="../configs/createchat.php">
+                            <input name="FID" type="hidden" value="<?=$friend['FID']?>">
+                            <input name="userID" type="hidden" value="<?=$_SESSION['user']?>">
+                            <input type="submit" class="btn btn-info" value="<?= $lang['chat'] ?>">
+                        </form>
+                    </td>
+                    <td style="text-align: right; max-width: available; padding-right: 0;">
                         <form method="post" action="../configs/deletefriend.php">
                             <input name="FID" type="hidden" value="<?=$friend['FID']?>">
                             <input name="userID" type="hidden" value="<?=$_SESSION['user']?>">
